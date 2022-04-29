@@ -14,7 +14,9 @@ let scene = new ScrollMagic.Scene({
     triggerElement : intro,
     triggerHook : 0
 })
-
+.addIndicators()
+.setPin(intro)
+.addTo(controller);
 //Text Animation
 const textAnim = TweenMax.fromTo(text, 3, {opacity : 1}, {opacity : 0});
 
@@ -23,9 +25,9 @@ let scene2 = new ScrollMagic.Scene({
     triggerElement : intro,
     triggerHook : 0
 })
-.addIndicators()
-.setPin(intro)
-.addTo(controller);
+    .setTween(textAnim)
+    .addTo(controller);
+
 
 // Video animation
 let accelAmount = 0.1; // change the current frame for current video, remainging video frame will catch up after finishing scroll
