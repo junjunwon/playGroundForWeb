@@ -1,55 +1,58 @@
 /* 
 flexbox 
-1. first condition
- -> display : flex === inline-block
- -> need to be directive parent
 
- .wrapper is flexbox container
-when the flex-directino:row(x,y)
- flex-direction : row -> default direction 가로로 배치 horizontal
- -> flex-direction :row인 default상황에서 horizional axis -> main axis
-    -> to move on the main axis -> justify-content  
--> flex-drection:row에서  vertical axis ->cross axis
-    -> to move on the cross axis -> align-items
+align-self is simliar to align-items
+align-items : cross axis 방향에 있는 items들의 위치를 바꾸는 반면,
+align-self 1명의 child에게만 적용
 
-반대의 상황에서는 axis가 반대가 되는듯.
+order properties
+- it is kind of weird but it is useful when you cannot change html.
 
-flex에서 상자들을 중앙으로 놓기 위해서는 warpper(직속부모)의 크기를 알아야 한다.
-속성으로 확인해보면 직속부모의 크기와 상자의 크기가 같고 중앙에 벌써 위치해있다는것을 알 수 있다.
-그러기 위해서는 flex contaniner의 크기를 정해주자.
 
-THE REASON WHY WE CONFUSE BETWEEN
-justify-content vs align-items
--> we don't sure which is main axis and cross axis!!
--> make sure to know this with flex-direction.
+flex-box
+-> 기본적으로 flexbox는 items가 모두 같은 줄에 있도록 유지한다. -> 너비가 200-> 150과 같이 더 줄어든다 해도 모두 한줄!! 
 */
-.wrapper {
+.father1 {
     display: flex; 
-    flex-direction: column;
+    flex-direction: row;
     /*Main axis*/
     justify-content: space-around;
-    /*Cross axis*/
-    align-items: stretch;
-    height: 200vh; /*height를 정해주는게 중요함!*/
+    height: 100vh; /*height를 정해주는게 중요함!*/
+    flex-wrap: wrap; /*nowarp : everything is a line, wrap is respect the width you set before*/
 }
-.box { 
-    /* width: 200px; */
+.father {
+    display: flex; 
+    /* flex-direction: row-reverse; */
+    justify-content: space-around;
+    align-content: space-around; /*justify-content와 비슷하지만 라인들을 변경하기 위한 속성 in cross axis*/
+    height: 200vh;
+    flex-wrap: wrap;
+}
+.child { 
+    width: 200px;
     height: 200px;
     background: peru;
     color: white;
+    font-size: 50px;
+    /*child can be a flex container. this time is for font*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
-/* .box {
-    background: blue;
-    width: 300px;
-    height: 300px;
-    display: inline-block;
-    color: white;
+/**
+cross axis에서 선택한 2번째 child만 center에 가있음.
+*/
+.child:nth-child(2) {
+    /* align-self: center; */
+    /*
+        default box order is 0 
+        order 1 > 0 -> so will be end of the lastest
+    */
+    /* order : 1; */
 }
-
-.box:nth-child(2) {
-    margin-left: 35px;
+.child:nth-child(1) {
+    /* order : 3; */
 }
-.box:nth-child(3) {
-    margin-left: 20px;
-} */
+.child:nth-child(3) {
+    /* align-self: flex-end; */
+}
