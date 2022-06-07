@@ -1,6 +1,6 @@
-/* 
 flexbox 
 
+/* 
 align-self is simliar to align-items
 align-items : cross axis 방향에 있는 items들의 위치를 바꾸는 반면,
 align-self 1명의 child에게만 적용
@@ -11,6 +11,12 @@ order properties
 
 flex-box
 -> 기본적으로 flexbox는 items가 모두 같은 줄에 있도록 유지한다. -> 너비가 200-> 150과 같이 더 줄어든다 해도 모두 한줄!! 
+
+flex-shrink: 2;
+ -> 기본은 1으로 2배만큼 2로 설정할 경우 줄어든다.
+flex-grow 
+-> default : 0
+-> flex-grow : 1 -> taking remaining space, take as much as space 
 */
 .father1 {
     display: flex; 
@@ -28,6 +34,13 @@ flex-box
     height: 200vh;
     flex-wrap: wrap;
 }
+.father2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content:center;
+    flex-wrap: nowrap;
+}
 .child { 
     width: 200px;
     height: 200px;
@@ -43,6 +56,9 @@ flex-box
 cross axis에서 선택한 2번째 child만 center에 가있음.
 */
 .child:nth-child(2) {
+    /* flex-shrink: 2; */
+    flex-grow: 2;
+    background-color: black;
     /* align-self: center; */
     /*
         default box order is 0 
@@ -54,5 +70,6 @@ cross axis에서 선택한 2번째 child만 center에 가있음.
     /* order : 3; */
 }
 .child:nth-child(3) {
+    flex-grow: 1;
     /* align-self: flex-end; */
 }
