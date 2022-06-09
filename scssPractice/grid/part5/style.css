@@ -1,0 +1,31 @@
+.grid {
+    display: grid;
+    gap : 10px;
+    height : 50vh; /* half of my screen*/
+    /* grid-template-columns: repeat(4, 1fr); */
+    /* grid-template-rows: repeat(4, 1fr); */
+    grid-template: 
+        [header-start]"header header header header" 1fr [header-end] /* <- each row height*/
+        [content-start]"content content content nav" 2fr [content-end]
+        [footer-start]"footer footer footer footer" 1fr [footer-end] / 1fr 1fr 1fr 1fr 
+        /* 
+            "/ 가로(column length) 길이" 
+            you can use naming rule ["naming"] if you want.
+        */
+}
+.header {
+    background-color: #2ecc71;
+    grid-area : header;
+}
+.content {
+    background-color: #3498db;
+    grid-area : content;
+}  
+.nav {
+    background-color: #8e44ad;
+    grid-area : nav
+}
+.footer {
+    background-color: #f39c12;
+    grid-area : footer
+}
