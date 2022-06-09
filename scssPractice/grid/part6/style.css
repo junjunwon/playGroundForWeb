@@ -1,0 +1,29 @@
+.grid {
+    display: grid;
+    gap : 5px;
+    height : 50vh; /* half of my screen*/
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4,1fr);
+    /*justify-items : horizontally center, start, end */
+    /* justify-items: center;  */
+    /* align items : vertically center, start, end */
+    /* align-items : center; */
+    /* place-items: y(vertical) x(horizon) */
+    place-items: start left;
+    /* 
+        stretch : grid container will take grid children will strech them to fill it each cell
+        to the left right, bottom, top
+    */
+}
+.header {
+    background-color: #2ecc71;
+}
+.content {
+    background-color: #3498db;
+}  
+.nav {
+    background-color: #8e44ad;
+}
+.footer {
+    background-color: #f39c12;
+}
