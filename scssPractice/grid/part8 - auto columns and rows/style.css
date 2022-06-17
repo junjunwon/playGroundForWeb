@@ -1,0 +1,23 @@
+.grid {
+    display: grid;
+    background: grey;
+    color : white;
+    gap : 5px;
+    height : 50vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(4, 100px);
+    /* automatically get more rows with default value like 100px when you got more elements  */
+    /* grid-auto-rows: 100px;  */
+    /* whenever there is more deeps than amount of elements put it in next column */
+    grid-auto-flow: column;
+    grid-auto-columns: 100px;
+
+        
+}
+
+.item:nth-child(odd) {
+    background-color: #2ecc71;
+}
+.item:nth-child(even) {
+    background-color: #3498db;
+}
