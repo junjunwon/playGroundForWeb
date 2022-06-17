@@ -1,0 +1,28 @@
+.grid {
+    display: grid;
+    color : white;
+    gap : 5px;
+    /* grid-template-columns: repeat(auto-fill, minmax(max-content, 1fr)); */
+    grid-template-columns: repeat(auto-fit, minmax(20px, max-content));
+    grid-auto-rows: 100px;
+    margin-bottom: 30px;
+        
+}
+/* 
+   min-content and max-content
+   thinking about content size!
+   min-content : as somall as content needed to be
+   max-contet : as big as content needed to be
+
+   we can design about what does have inside. how should content look like
+   it can combine with min max and auto-fill, auto-fill
+
+   brower measure space and check this content needs this space
+*/
+
+.item:nth-child(odd) {
+    background-color: #2ecc71;
+}
+.item:nth-child(even) {
+    background-color: #3498db;
+}
