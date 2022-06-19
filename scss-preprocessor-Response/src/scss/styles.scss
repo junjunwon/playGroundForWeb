@@ -1,49 +1,14 @@
-// everything i write in scss will write in css file (dist/css/styles.css) in real time!
-// real time is important by watch in gulpfile.babel.js
-
-@import "_variables";
 @import "_mixins";
-@import "_buttons";
 
-a {
-    margin-bottom: 10px;
-    &:nth-child(odd) {
-        @include link("odd");
-    }
-    &:nth-child(even) {
-        @include link("even");
-    }
-    
-    @extend %button;
-    text-decoration: none;
-}
-button {
-    @extend %button;
-    border: none;
-}
-// body { 
-//     background: $bg;
-// }
 h1 {
-    @include mymixin();
-}
-h2 {
-    color : $bg;
-    &:hover {
-        color:blue;
+    color : red;
+    @include responsive("iphone"){
+        color: yellow;
     }
-    font-size: $title;
-}
-
-.box { 
-    margin-top : 20px;
-    &:hover { //same with .box:hover
-        background-color: green;
+    @include responsive("iphone-l"){
+        font-size:60px;
     }
-    h2 {
-        color:blue;
-    }
-    button {
-        color:red;
+    @include responsive("tablet"){
+        color : green;
     }
 }
