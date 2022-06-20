@@ -1,0 +1,30 @@
+// @mixin responsive {
+//     color: blue;
+//     @content;
+// }
+
+//font Size
+$titleSize : 50px;
+$mediumSize : 25px;
+$textSize : 15px;
+$bottomSize : 10px;
+
+@mixin fontSize($size) {
+    @if $size == 'titleSize' {
+        font-size: $titleSize;
+        font-weight: bold;
+        @content;
+    } @else if $size == 'mediumSize' {
+        font-size: $mediumSize;
+        font-weight: inherit;
+        @content;
+    } @else if $size == 'textSize' {
+        font-size: $textSize;
+        font-weight: inherit;
+        @content;
+    } @else if $size == 'bottomSize' {
+        font-size: $bottomSize;
+        font-weight: lighter;
+        @content;
+    }
+}
