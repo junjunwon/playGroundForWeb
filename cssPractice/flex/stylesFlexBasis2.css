@@ -1,0 +1,21 @@
+.father2 { 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: space-around;
+    height: 100vh;
+    flex-wrap: nowrap;
+}
+.child {
+    flex-basis: 300px;/* give initial size to elements before shrink or grow */
+    height: 200px;
+    background-color: peru;
+    color: white;
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.child:nth-child(1){
+    flex-grow: 2;
+}

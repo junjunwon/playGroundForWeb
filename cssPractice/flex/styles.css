@@ -1,5 +1,3 @@
-flexbox 
-
 /* 
 align-self is simliar to align-items
 align-items : cross axis 방향에 있는 items들의 위치를 바꾸는 반면,
@@ -39,6 +37,13 @@ flex-grow
     flex-direction: row;
     justify-content: space-around;
     align-content:center;
+    flex-wrap: nowrap;
+}
+.father3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content:flex-start;
     flex-wrap: nowrap;
 }
 .child { 
